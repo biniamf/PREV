@@ -267,7 +267,7 @@ print(paste(<span class="hljs-string">"Distance:"</span>,distance,<span class="h
                                 </p><pre><code class="hljs r">
 <span class="hljs-comment"># instrumatation </span>
 java -jar instrumenter.jar input_dir/{$APK} ${platforms} output/${APK}</code></pre>
-                                Where ${platforms} variable is set to the platform JAR files directory. This will produce an instrumented app. Don't forget to sign and zipalign in order to be able to install it in an emulator/device.
+                                Where ${platforms} variable is set to the platform JAR files directory. You can find the different platform JARs either from Android SDK or from <a class="more-link" href="https://github.com/Sable/android-platforms">this</a> repository. This will produce an instrumented app. Don't forget to sign and zipalign in order to be able to install it in an emulator/device.
                                 <pre><code class="hljs r">
 <span class="hljs-comment">#signing the instrumented apk</span>
 ./signApk.sh output/${APK}
