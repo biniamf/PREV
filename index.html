@@ -297,14 +297,14 @@ java -jar CallGraphAnalyzer.jar input_dir/${APK} SourcesAndSinks.txt List_Of_All
 				<h3 class="title">Cheetsheet</h3>
                                 <p>Here is a summary of the commands</p>
 <pre>
-<code class="hljs r"> 
+<code class="hljs"> 
 <span class="hljs-comment"># inside PREV directory</span>
 
 <span class="hljs-comment"># ${platform} points to a directory containing different Android platform JAR files (e.g., android-8, android-9...)</span>
 
 java -jar instrumenter.jar input/org.lumicall.android_186.apk ${platform} output/
 
-<span class="hljs-comment"># ouput dir will have instrumented org.lumicall.android_186.apk files
+<span class="hljs-comment"># ouput dir will have instrumented org.lumicall.android_186.apk file</span>
 
 cd signAPK
 ./signAPK/signApk.sh ../output/org.lumicall.android_186.apk
