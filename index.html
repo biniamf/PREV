@@ -315,7 +315,7 @@ cd ..
 java -jar CallGraphAnalyzer.jar input/org.lumicall.android_186.apk SourcesAndSinks.txt $platform jellybean_allmappings.txt output/org.lumicall.android_186_sensitive_paths.txt
 
 <span class="hljs-comment"> # at this point you do the outlier detection and select the paths that are intersting for test generation </span>
-<span class="hljs-comment"> # if you instead want to do test generation for the app for all the app, you can continue with the following command with all the paths from the previous command </span>
+<span class="hljs-comment"> # if you instead want to do test generation for all the paths in the app, you can continue with the following command with all the paths from the previous command </span>
 
 <span class="hljs-comment"> # install the app </span>
 adb install output/org.lumicall.android_186.apk
@@ -323,7 +323,7 @@ adb install output/org.lumicall.android_186.apk
 <span class="hljs-comment"> # create results directory for the GA tool to output intents as adb command and their fitnesses </span>
 mkdir results
 
-<span class="hljs-comment"> # start the GA. Intents as ADB command and their fitness will be output in the same dir </span>
+<span class="hljs-comment"> # start the GA. Intents as ADB command and their fitness will be output in the results dir for each component </span>
 java -jar GAIntentGenerator.jar output/org.lumicall.android_186_sensitive_paths.txt input/org.lumicall.android_186.apk ${platform} /Library/Android/sdk/platform-tools/adb
 
 </code>
