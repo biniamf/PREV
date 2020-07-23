@@ -296,38 +296,38 @@ java -jar CallGraphAnalyzer.jar input_dir/${APK} SourcesAndSinks.txt List_Of_All
 				<div class="item">	
 				<h3 class="title">Cheetsheet</h3>
                                 <p>Here is a summary of the commands</p>
-					<pre>
-					<code class="hljs r"> 
-					<span class="hljs-comment"># inside PREV directory</span>
+<pre>
+<code class="hljs r"> 
+<span class="hljs-comment"># inside PREV directory</span>
 
-					<span class="hljs-comment"># ${platform} points to a directory containing different Android platform JAR files (e.g., android-8, android-9...)</span>
+<span class="hljs-comment"># ${platform} points to a directory containing different Android platform JAR files (e.g., android-8, android-9...)</span>
 
-					java -jar instrumenter.jar input/org.lumicall.android_186.apk ${platform} output/
+java -jar instrumenter.jar input/org.lumicall.android_186.apk ${platform} output/
 
-					<span class="hljs-comment"># ouput dir will have instrumented org.lumicall.android_186.apk files
+<span class="hljs-comment"># ouput dir will have instrumented org.lumicall.android_186.apk files
 
-					cd signAPK
-					./signAPK/signApk.sh ../output/org.lumicall.android_186.apk
+cd signAPK
+./signAPK/signApk.sh ../output/org.lumicall.android_186.apk
 
-					cd ..
+cd ..
 
-					<span class="hljs-comment"> # extracting sensive paths to sinks</span>
-					java -jar CallGraphAnalyzer.jar input/org.lumicall.android_186.apk SourcesAndSinks.txt $platform jellybean_allmappings.txt output/org.lumicall.android_186_sensitive_paths.txt
+<span class="hljs-comment"> # extracting sensive paths to sinks</span>
+java -jar CallGraphAnalyzer.jar input/org.lumicall.android_186.apk SourcesAndSinks.txt $platform jellybean_allmappings.txt output/org.lumicall.android_186_sensitive_paths.txt
 
-					<span class="hljs-comment"> # at this point you do the outlier detection and select the paths that are intersting for test generation </span>
-					<span class="hljs-comment"> # if you instead want to do test generation for the app for all the app, you can continue with the following command with all the paths from the previous command </span>
+<span class="hljs-comment"> # at this point you do the outlier detection and select the paths that are intersting for test generation </span>
+<span class="hljs-comment"> # if you instead want to do test generation for the app for all the app, you can continue with the following command with all the paths from the previous command </span>
 
-					<span class="hljs-comment"> # install the app </span>
-					adb install output/org.lumicall.android_186.apk
+<span class="hljs-comment"> # install the app </span>
+adb install output/org.lumicall.android_186.apk
 
-					<span class="hljs-comment"> # create results directory for the GA tool to output intents as adb command and their fitnesses </span>
-					mkdir results
+<span class="hljs-comment"> # create results directory for the GA tool to output intents as adb command and their fitnesses </span>
+mkdir results
 
-					<span class="hljs-comment"> # start the GA. Intents as ADB command and their fitness will be output in the same dir </span>
-					java -jar GAIntentGenerator.jar output/org.lumicall.android_186_sensitive_paths.txt input/org.lumicall.android_186.apk ${platform} /Library/Android/sdk/platform-tools/adb
+<span class="hljs-comment"> # start the GA. Intents as ADB command and their fitness will be output in the same dir </span>
+java -jar GAIntentGenerator.jar output/org.lumicall.android_186_sensitive_paths.txt input/org.lumicall.android_186.apk ${platform} /Library/Android/sdk/platform-tools/adb
 
-					</code>
-				</pre>
+</code>
+</pre>
 				</div><!--//item-->
                             </div><!--//item-->
                         </div><!--//content-->  
